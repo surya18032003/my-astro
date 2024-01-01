@@ -1,15 +1,16 @@
 {
     "name": "பாலா ஜோதிடம் | நட்சத்திர பலன்கள்",
     "short_name": "நட்சத்திர பலன்கள்",
-    "start_url": "/",
+    "lang": "en-US",
+    "start_url": "index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#4285F4",
     "icons": [
       {
-        "src": "/images/logo.png",
+        "src": "images/logo.png",
         "sizes": "192x192",
         "type": "image/png"
       }
     ]
-  }
+}
