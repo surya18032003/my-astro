@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title >பாலா ஜோதிடம் </title>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- styles -->
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="/styles/bootstrap-reboot.min.css">
+
+  <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body class="bg-white">
+  <div class="container-fluid">
+    <h1 class="site-title mt-2 mb-0"><img src="/images/logo.png"  style="height: 40px;"> பாலா <span class="text-primary">ஜோதிடம்</span></h1>
+    <nav aria-label="breadcrumb" class="small mb-5">
+      <ol class="breadcrumb bg-white">
+        <li class="breadcrumb-item font-weight-bold"><a href="/index.html">பாலா ஜோதிடம்</a></li>
+        <li class="breadcrumb-item active font-weight-bold" aria-current="page">பயன்பாடுகள்</li>
+      </ol>
+    </nav>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <a href="/stars.html" class=" card app bg-light border-0">
+          <div class="app-logo" style="background-image: url(images/stars.png);"></div> 
+          <div class="card-body  ">
+            <h5 class="card-title app-name text-center">நட்சத்திர பலன்கள்</h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <p class="mt-4 text-center">Powered by <a href="https://prakasharul.github.io/" target="blank">Codelife India</a></p>
+  </div>
+  <script src="scripts/bootstrap.min.js"></script>
+  <script src="scripts/bootstrap.bundle.min.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>

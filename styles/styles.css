@@ -1,0 +1,38 @@
+/* Your CSS styles here */
+body {
+    font-family: 'Montserrat', sans-serif !important;
+    /* Use Montserrat as the first choice and fall back to default sans-serif font */
+  }
+.site-title{
+    font-weight: bold;
+    color: #333; 
+    font-size: 3rem;
+}
+.app {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    background-color: f2f2f2 !important;
+  }
+  
+  .app:hover {
+    transform: translateY(-5px);
+    text-decoration: none;
+  }
+  
+  .app-logo {
+    border-radius: 10px;
+    height: 10rem; /* Adjust as needed */
+    width: 100%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  
+  .app-name {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .app-description {
+    color: #666;
+  }
