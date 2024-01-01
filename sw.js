@@ -4,7 +4,6 @@ var filesToCache = [
   '/index.html',
   '/stars.html',
   '/styles/styles.css',
-  '/scripts/app.js',
   '/images/logo.png',
   '/styles/bootstrap.min.css',
   '/styles/bootstrap-grid.min.css',

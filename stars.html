@@ -21,7 +21,7 @@
   <div class="container-fluid">
     <h1 class="site-title mt-2 mb-0"><img src="images/logo.png"  style="height: 40px;"> பாலா <span class="text-primary">
         ஜோதிடம்</span></h1>
-    <nav aria-label="breadcrumb" class="small mb-5">
+    <nav aria-label="breadcrumb" class="small mb-3">
         <ol class="breadcrumb bg-white">
           <li class="breadcrumb-item font-weight-bold"><a href="index.html">பாலா ஜோதிடம்</a></li>
           <li class="breadcrumb-item active font-weight-bold" aria-current="page">நட்சத்திர பலன்கள்</li>
@@ -31,15 +31,15 @@
       <div class="container bg-light p-4">
         <form class="form mb-0">
           <div class="row">
-            <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="form-group">
+            <div class="col-md-4 col-sm-6 col-xs-12 mb-2">
+              <div class="form-group mb-0">
                 <select class="form-control" id="baseStar"> 
                   <option value="">தேர்வு செய்</option>
                 </select>
               </div>
             </div>
             <div class="col-md-4 col-sm-6 col-xs-12">
-              <div class="form-group">
+              <div class="form-group mb-0">
                 <select class="form-control" id="actualStar"> 
                   <option value="">தேர்வு செய்</option>
                 </select>
@@ -55,9 +55,9 @@
 
     <p style="text-align:center">Powered by <a href="https://prakasharul.github.io/">Codelife India</a></p>
   </div>
+  <script src="scripts/jquery-3.7.1.min.js"></script>
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/bootstrap.bundle.min.js"></script>
-  <script src="scripts/jquery-3.7.1.min.js"></script>
   <script>
     $(document).ready(function() {
       // List of values to populate the dropdown
@@ -138,10 +138,16 @@
       $('#baseStar').on('change', function() {
         var baseStarValue = natchathiraNames.indexOf($(this).val()); // Get index of selected value in the array
         if (baseStarValue !== -1) {
+          console.log(natchathiraNames)
           var namesBeforeIndex = natchathiraNames.slice(0, baseStarValue); // Slice the array from start to selectedIndex (inclusive)
           var namesAfterIndex = natchathiraNames.slice(baseStarValue); // Slice the array from selectedIndex to end
+          console.log(namesBeforeIndex)
+          console.log(namesAfterIndex)
 
           actualStarNames = namesAfterIndex.concat(namesBeforeIndex);
+          console.log(actualStarNames)
+          actualStarDropdown.empty();
+          actualStarDropdown.append($('<option value="">தேர்வு செய்</option>'));
           $.each(actualStarNames, function(index, value) {
             actualStarDropdown.append($('<option></option>').attr('value', value).text(value));
           });
@@ -152,7 +158,7 @@
         op = actualStarNames.indexOf($(this).val());
         res = resultsList[op];
         // console.log(res)
-        resultBlock.html(res);
+        resultBlock.html(' '+op+'. '+res);
         resultBlock.show();
       });
     });
