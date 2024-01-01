@@ -1,6 +1,6 @@
-const CACHE_NAME = 'codelife-stars-app-v1';
-const urlsToCache = [
-  '/',
+var cacheName = 'odelife-stars-app-v1'
+var filesToCache = [
+	'/',
   '/index.html',
   '/stars.html',
   '/styles/styles.css',
@@ -14,33 +14,23 @@ const urlsToCache = [
   '/scripts/jquery-3.7.1.min.js'
 ];
 
-self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(urlsToCache))
-  );
+
+// start service worker and cache all of the app's content
+self.addEventListener('install', function(e){
+	e.waitUntil(
+		caches.open(cacheName).then(function(cache){
+			return cache.addAll(filesToCache);
+		})
+	);
 });
 
-self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
-});
 
-self.addEventListener('activate', event => {
-  event.waitUntil(
-    caches.keys()
-      .then(cacheNames => {
-        return Promise.all(
-          cacheNames.filter(name => name !== CACHE_NAME)
-            .map(name => caches.delete(name))
-        );
-      })
-  );
+// serve cached content when offline
+self.addEventListener('fetch', function(e){
+	e.respondWith(
+		caches.match(e.request).then(function(response){
+			return response || fetch(e.request);
+		})
+	);
+
 });
