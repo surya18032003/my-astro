@@ -10,7 +10,8 @@ const urlsToCache = [
   '/styles/bootstrap-grid.min.css',
   '/styles/bootstrap-reboot.min.css',
   '/scripts/bootstrap.min.js',
-  '/scripts/bootstrap.bundle.min.js'
+  '/scripts/bootstrap.bundle.min.js',
+  '/scripts/jquery-3.7.1.min.js'
   // Add more URLs to cache as needed
 ];
 

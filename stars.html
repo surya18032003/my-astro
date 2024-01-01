@@ -27,10 +27,97 @@
           <li class="breadcrumb-item active font-weight-bold" aria-current="page">நட்சத்திர பலன்கள்</li>
         </ol>
       </nav>
+
+      <div class="container bg-light p-4">
+        <form id="" class="form mb-0">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <select class="form-control" id="baseStar"> 
+                  <option value="">தேர்வு செய்</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+              <div class="form-group">
+                <select class="form-control" id="actualStar"> 
+                  <option value="">தேர்வு செய்</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          
+        </form>
+      </div>
+
     <p style="text-align:center">Powered by <a href="https://prakasharul.github.io/">Codelife India</a></p>
   </div>
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/bootstrap.bundle.min.js"></script>
-  
+  <script src="scripts/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  // List of values to populate the dropdown
+  let natchathiraNames = [
+    'அச்சுவினி',
+    'பரணி',
+    'கிருத்திகை',
+    'ரோகிணி',
+    'மிருகசீரிடம்',
+    'திருவாதிரை',
+    'புனர்பூசம்',
+    'பூசம்',
+    'ஆயிலியம்',
+    'மகம்',
+    'பூரம்',
+    'உத்தரம்',
+    'அத்தம்',
+    'சித்திரை',
+    'சுவாதி',
+    'விசாகம்',
+    'அனுசம்',
+    'கேட்டை',
+    'மூலம்',
+    'பூராடம்',
+    'உத்திராடம்',
+    'திருவோணம்',
+    'அவிட்டம்',
+    'சதயம்',
+    'பூரட்டாதி',
+    'உத்திரட்டாதி',
+    'ரேவதி'
+];
+
+  // Reference to the dropdown by its ID
+  var baseStarDropdown = $('#baseStar');
+  var actualStarDropdown = $('#actualStar');
+  // Loop through the values and append options to the dropdown
+  $.each(natchathiraNames, function(index, value) {
+    baseStarDropdown.append($('<option></option>').attr('value', value).text(value));
+  });
+
+
+  $('#baseStar').on('change', function() {
+    var baseStarValue = natchathiraNames.indexOf($(this).val()); // Get index of selected value in the array
+
+    if (baseStarValue !== -1) {
+      var namesBeforeIndex = natchathiraNames.slice(0, baseStarValue + 1); // Slice the array from start to selectedIndex (inclusive)
+      var namesAfterIndex = natchathiraNames.slice(baseStarValue + 1); // Slice the array from selectedIndex to end
+
+      var actualStarNames = namesBeforeIndex.concat(namesAfterIndex);
+      $.each(actualStarNames, function(index, value) {
+        actualStarDropdown.append($('<option></option>').attr('value', value).text(value));
+      });
+    } else {
+    }
+  });
+
+  $('#actualStar').on('change', function() {
+    var actualStarValue = natchathiraNames.indexOf($(this).val());
+    console.log(actualStarValue)
+    
+  });
+});
+  </script>
 </body>
 </html>
