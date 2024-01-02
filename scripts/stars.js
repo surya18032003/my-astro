@@ -77,11 +77,11 @@ $(document).ready(function() {
     $('#baseStar').on('change', function() {
       var baseStarValue = natchathiraNames.indexOf($(this).val()); // Get index of selected value in the array
       if (baseStarValue !== -1) {
-        console.log(natchathiraNames)
+        //console.log(natchathiraNames)
         var namesBeforeIndex = natchathiraNames.slice(0, baseStarValue); // Slice the array from start to selectedIndex (inclusive)
         var namesAfterIndex = natchathiraNames.slice(baseStarValue); // Slice the array from selectedIndex to end
-        console.log(namesBeforeIndex)
-        console.log(namesAfterIndex)
+        //console.log(namesBeforeIndex)
+        //console.log(namesAfterIndex)
 
         actualStarNames = namesAfterIndex.concat(namesBeforeIndex);
         console.log(actualStarNames)
