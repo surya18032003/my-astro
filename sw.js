@@ -1,16 +1,18 @@
 var cacheName = 'odelife-stars-app-v1'
 var filesToCache = [
 	'/',
-  '/index.html',
-  '/stars.html',
-  '/styles/styles.css',
-  '/images/logo.png',
-  '/styles/bootstrap.min.css',
-  '/styles/bootstrap-grid.min.css',
-  '/styles/bootstrap-reboot.min.css',
-  '/scripts/bootstrap.min.js',
-  '/scripts/bootstrap.bundle.min.js',
-  '/scripts/jquery-3.7.1.min.js'
+	'/index.html',
+	'/stars.html',
+	'/styles/styles.css',
+	'/images/logo.png',
+	'/scripts/app.js',
+	'/scripts/stars.js',
+	'/styles/bootstrap.min.css',
+	'/styles/bootstrap-grid.min.css',
+	'/styles/bootstrap-reboot.min.css',
+	'/scripts/bootstrap.min.js',
+	'/scripts/bootstrap.bundle.min.js',
+	'/scripts/jquery-3.7.1.min.js'
 ];
 
 
